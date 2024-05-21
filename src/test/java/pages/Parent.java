@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.GWD;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.time.Duration;
 import java.util.List;
 
@@ -62,6 +64,12 @@ public class Parent {
         wait.until(ExpectedConditions.visibilityOf(element));
         scrollToElement(element);
         new Actions(GWD.getDriver()).moveToElement(element).build().perform();
+    }
+
+    public void myPathFile(String pathFile) {
+        StringSelection createPathFile=new StringSelection(pathFile);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(createPathFile, null);
+
     }
 
     public void waitUntilVisibilityOf(WebElement element) {
