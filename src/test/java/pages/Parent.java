@@ -86,12 +86,12 @@ public class Parent {
     }
 
     public static boolean compareLists(List<WebElement> list1, List<String> list2) {
-        // Check if the lists are of equal size
+        // Check if the lists are of equal size.
         if (list1.size() != list2.size()) {
             return false;
         }
 
-        // Iterate through the elements of both lists and compare them
+        // Iterate through the elements of both lists and compare them.
         for (int i = 0; i < list1.size(); i++) {
             if (!list1.get(i).getText().equals(list2.get(i))) {
                 return false;
