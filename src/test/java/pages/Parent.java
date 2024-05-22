@@ -84,6 +84,18 @@ public class Parent {
         return (int) (Math.random() * range);
     }
 
+    public void iframeSwitchByIndex(int index){
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
+    }
+
+    public void iframeSwitchByNameOrId(String nameOrId){
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(nameOrId));
+    }
+
+    public void iframeSwitchByElement(WebElement iframeElement){
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframeElement));
+    }
+
     public static boolean listContainsString(List<WebElement> list, String search) {
         boolean isFound = false;
         for (WebElement e : list) {
