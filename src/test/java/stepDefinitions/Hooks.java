@@ -18,7 +18,7 @@ public class Hooks {
     @After
     public void after(Scenario scenario) {
 
-        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/CucumberTestResults.xlsx",
+        ExcelUtility.writeToExcel("src/test/java/apachePOI/resource/CucumberTestResults.xlsx",
                 scenario.getName() + " " + (scenario.isFailed() ? "Failed" : "Passed"));
 
         if (scenario.isFailed()) {
@@ -26,7 +26,7 @@ public class Hooks {
             byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(bytes, "image/png", "screenshot name");
         }
-        System.out.println(" Scenario has been completed. ");
+        System.out.println("Scenario has been completed.");
         GWD.quitDriver();
     }
 }
