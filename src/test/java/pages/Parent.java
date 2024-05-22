@@ -12,10 +12,14 @@ import utilities.GWD;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
 public class Parent {
+
+
+
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
     public void myClick(WebElement element) {
@@ -66,9 +70,32 @@ public class Parent {
         new Actions(GWD.getDriver()).moveToElement(element).build().perform();
     }
 
-    public void myPathFile(String pathFile) {
+    public void myUploadFile(String pathFile) {
+
+        Robot robot;
+
+        {
+            try {
+                robot = new Robot();
+            } catch (AWTException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         StringSelection createPathFile=new StringSelection(pathFile);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(createPathFile, null);
+
+        wait(1);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        wait(1);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        wait(1);
 
     }
 
