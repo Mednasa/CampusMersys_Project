@@ -12,6 +12,7 @@ import utilities.GWD;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
@@ -98,6 +99,62 @@ public class Parent {
         wait(1);
 
     }
+
+    public void tabKeyMultiplePress(int quantity) {
+
+        Robot robot;
+
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+
+        for (int i = 0; i <quantity ; i++) {
+            robot.delay(500);
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+
+    }
+
+    public void enterKeyMultiplePress(int quantity) {
+
+        Robot robot;
+
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+
+        for (int i = 0; i <quantity ; i++) {
+            robot.delay(500);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        }
+
+    }
+
+    public void leftClickMultiplePress(int quantity) {
+
+        Robot robot;
+
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+
+        for (int i = 0; i <quantity ; i++) {
+            robot.delay(500);
+            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            robot.delay(500);
+        }
+
+    }
+
 
     public void waitUntilVisibilityOf(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
