@@ -129,7 +129,7 @@ public class Parent {
         }
 
         for (int i = 0; i <quantity ; i++) {
-            robot.delay(500);
+            robot.delay(1000);
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
         }
@@ -147,10 +147,10 @@ public class Parent {
         }
 
         for (int i = 0; i <quantity ; i++) {
-            robot.delay(500);
+            robot.delay(1000);
             robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-            robot.delay(500);
+            robot.delay(1000);
         }
 
     }

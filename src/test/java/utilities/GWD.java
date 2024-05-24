@@ -36,7 +36,7 @@ public class GWD {
             }
 
 
-            threadDriver.get().manage().window().setPosition(new Point(-1000, 0));
+//            threadDriver.get().manage().window().setPosition(new Point(-1000, 0));
 
             threadDriver.get().manage().window().maximize();
 
