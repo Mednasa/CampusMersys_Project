@@ -45,10 +45,10 @@ public class DialogContentOnur extends Parent{
     public WebElement fromLocalBtn;
 
     @FindBy(xpath = "(//*[text()='File'])[2]")
-    public WebElement selectFile;
+    public WebElement fileBtn;
 
     @FindBy(xpath = "//*[text()=' Image ']")
-    public WebElement selectImage;
+    public WebElement imageBtn;
 
     @FindBy(css = "[class='svg-inline--fa fa-triangle-exclamation fa-fw']")
     public WebElement notSaveIcon;
@@ -60,20 +60,56 @@ public class DialogContentOnur extends Parent{
     public WebElement succesMessages;
 
     @FindBy(xpath = "(//span[@class='mat-mdc-focus-indicator'])[30]")
-    public WebElement openImage;
+    public WebElement openImageBtn;
 
     @FindBy(xpath = "(//*[@class='svg-inline--fa fa-square-xmark fa-fw'])[2]")
-    public WebElement closeImage;
+    public WebElement closeImageBtn;
 
     @FindBy(xpath = "(//*[text()='Submit'])[1]")
-    public WebElement submitBtn;
+    public WebElement secondSubmitBtn;
 
     @FindBy(xpath = "//*[text()=' Yes ']")
-    public WebElement confirmYes;
+    public WebElement confirmYesBtn;
 
     @FindBy(xpath = "(//span[@class='mat-mdc-focus-indicator'])[20]")
     public WebElement submittedBtn;
 
     @FindBy(xpath = "//*[text()='New Submission']")
     public WebElement newSubmissonBtn;
+
+    public WebElement getWebElement(String elements) {
+        switch (elements) {
+
+            case "editBtn":
+                return this.editBtn;
+            case "pasteBtn":
+                return this.pasteBtn;
+            case "closeIconBtn":
+                return this.closeIconBtn;
+            case "attachFilesBtn":
+                return this.attachFilesBtn;
+            case "fromLocalBtn":
+                return this.fromLocalBtn;
+            case "fileBtn":
+                return this.fileBtn;
+            case "imageBtn":
+                return this.imageBtn;
+            case "saveAsDraftBtn":
+                return this.saveAsDraftBtn;
+            case "openImageBtn":
+                return this.openImageBtn;
+            case "closeImageBtn":
+                return this.closeImageBtn;
+            case "secondSubmitBtn":
+                return this.secondSubmitBtn;
+            case "confirmYesBtn":
+                return this.confirmYesBtn;
+            case "submittedBtn":
+                return this.submittedBtn;
+            case "newSubmissonBtn":
+                return this.newSubmissonBtn;
+
+        }
+        return null;
+    }
 }
