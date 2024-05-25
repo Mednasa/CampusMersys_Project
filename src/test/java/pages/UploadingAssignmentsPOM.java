@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 
-public class _US_021_DialogContent extends Parent{
+public class UploadingAssignmentsPOM extends Parent{
 
-    public _US_021_DialogContent() {
+    public UploadingAssignmentsPOM() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
