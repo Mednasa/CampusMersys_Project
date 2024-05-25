@@ -36,6 +36,12 @@ public class DialogContent extends Parent {
     @FindBy(css = "button[type=\"submit\"]")
     public WebElement dialogDelBtn;
 
+    @FindBy(xpath = "//mat-error[text()=' E-posta gereklidir ']")
+    public WebElement emailReqError;
+
+    @FindBy(xpath = "//mat-error[text()=' Şifre gereklidir ']")
+    public WebElement passwordReqError;
+
     public void deleteItem(String name) {
         wait.until(ExpectedConditions.visibilityOf(searchButton));
 
