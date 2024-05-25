@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import pages._US_021_DialogContent;
+import pages.UploadingAssignmentsPOM;
 import pages.Parent;
 import utilities.GWD;
 
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class UploadingAssignmentsSteps extends Parent {
 
-    _US_021_DialogContent dt21 = new _US_021_DialogContent();
+    UploadingAssignmentsPOM uap = new UploadingAssignmentsPOM();
 
     @Given("Click on the Element")
     public void clickOnTheElement(DataTable dt) {
@@ -24,7 +24,7 @@ public class UploadingAssignmentsSteps extends Parent {
         List<String> list = dt.asList(String.class);
 
         for (int i = 0; i < list.size(); i++) {
-            myJsClick(dt21.getWebElement(list.get(i)));
+            myJsClick(uap.getWebElement(list.get(i)));
         }
 
 
@@ -34,10 +34,10 @@ public class UploadingAssignmentsSteps extends Parent {
     public void loginToTheAssignmentSubmissionScreenAndClickSubmit() {
 
         wait.until(ExpectedConditions.urlToBe("https://test.mersys.io/user-courses"));
-        myClick(dt21.assignmentsBtn);
+        myClick(uap.assignmentsBtn);
 
         wait.until(ExpectedConditions.urlToBe("https://test.mersys.io/student-assignment"));
-        myClick(dt21.firstSubmitBtn);
+        myClick(uap.firstSubmitBtn);
     }
 
     @When("Use functionality such as writing notes, inserting tables and sending images during the assignment submission process")
@@ -53,7 +53,7 @@ public class UploadingAssignmentsSteps extends Parent {
 
         iframeSwitchByIndex(0);
 
-        mySendKeys(dt21.textPlc, textMessages);
+        mySendKeys(uap.textPlc, textMessages);
 
         enterKeyMultiplePress(1);
 
@@ -61,11 +61,11 @@ public class UploadingAssignmentsSteps extends Parent {
 
         leftClickMultiplePress(1);
 
-        mySendKeys(dt21.tableTextBox, "Thanos was");
+        mySendKeys(uap.tableTextBox, "Thanos was");
 
         tabKeyMultiplePress(3);
 
-        mySendKeys(dt21.tableTextBox2, "right!!!");
+        mySendKeys(uap.tableTextBox2, "right!!!");
 
         robot.mouseMove(550, 600);
 
@@ -87,8 +87,8 @@ public class UploadingAssignmentsSteps extends Parent {
 
     @Then("Verification that the copy and paste button function is not working")
     public void verificationThatTheCopyAndPasteButtonFunctionIsNotWorking() {
-        verifyContainsText(dt21.errorMessage,"doesn't support");
-        System.out.println(dt21.errorMessage.getText());
+        verifyContainsText(uap.errorMessage,"doesn't support");
+        System.out.println(uap.errorMessage.getText());
     }
 
     @And("Upload files from computer")
@@ -99,10 +99,10 @@ public class UploadingAssignmentsSteps extends Parent {
 
     @Then("Successfully saved as a draft")
     public void successfullySavedAsADraft() {
-        waitUntilVisibilityOf(dt21.notSaveIcon);
-        Assert.assertTrue(dt21.notSaveIcon.isDisplayed());
-        wait.until(ExpectedConditions.textToBePresentInElement(dt21.succesMessages,"Successfully saved as a draft"));
-        Assert.assertEquals(dt21.succesMessages.getText(),"Successfully saved as a draft");
-        System.out.println(dt21.succesMessages.getText());
+        waitUntilVisibilityOf(uap.notSaveIcon);
+        Assert.assertTrue(uap.notSaveIcon.isDisplayed());
+        wait.until(ExpectedConditions.textToBePresentInElement(uap.succesMessages,"Successfully saved as a draft"));
+        Assert.assertEquals(uap.succesMessages.getText(),"Successfully saved as a draft");
+        System.out.println(uap.succesMessages.getText());
     }
 }
