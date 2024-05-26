@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.GWD;
 
+import java.util.List;
+
 public class DialogContent extends Parent {
 
     public DialogContent() {
@@ -42,6 +44,52 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//mat-error[text()=' Şifre gereklidir ']")
     public WebElement passwordReqError;
 
+    @FindBy(css = "div[class=\"ng-star-inserted\"] span[style=\"margin-right: 4px;\"] button")
+    public WebElement hamburgerMenu;
+
+    @FindBy(css = "div[id=\"mat-menu-panel-4\"] button:nth-child(1)")
+    public WebElement HmbMessaging;
+
+    @FindBy(xpath = "//span[text()='New Message']")
+    public WebElement newMessage;
+
+    @FindBy(css = "ms-button[tooltip$=RECEIVER]")
+    public WebElement addReceiverBtn;
+
+    @FindBy(css = "tbody[role=\"rowgroup\"] mat-checkbox")
+    public List<WebElement> receiversCheckboxes;
+
+    @FindBy(xpath = "//span[text()=\"Add & Close\"]")
+    public WebElement addCloseBtn;
+
+    @FindBy(xpath = "//span[text()=\"Add\"]")
+    public WebElement addBtn;
+
+    @FindBy(css = "input[placeholder=\"Name, Username or E-mail\"]")
+    public WebElement receiverSearch;
+
+
+    public WebElement getWebElement(String e) {
+        switch (e) {
+            case "editBtn":
+                return this.deleteButton;
+            case "pasteBtn":
+                return this.dialogDelBtn;
+            case "closeIconBtn":
+                return this.searchPlc;
+            case "HmbMessaging":
+                return this.HmbMessaging;
+            case "newMessage":
+                return this.newMessage;
+            case "hamburgerMenu":
+                return this.hamburgerMenu;
+            case "receiverSearch":
+                return this.receiverSearch;
+        }
+        return null;
+    }
+
+
     public void deleteItem(String name) {
         wait.until(ExpectedConditions.visibilityOf(searchButton));
 
@@ -53,10 +101,5 @@ public class DialogContent extends Parent {
         myClick(deleteButton);
         myClick(dialogDelBtn);
     }
-
-    public WebElement getWebElement(String e) {
-        return null;
-    }
-
 
 }
