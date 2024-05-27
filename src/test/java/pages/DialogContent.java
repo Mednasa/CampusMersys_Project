@@ -92,7 +92,7 @@ public class DialogContent extends Parent {
     @FindBy(css = "ms-standard-button[icon=\"hdd\"]")
     public WebElement fromLocalButton;
 
-    @FindBy(css = "//div[contains(text(), 'sent')]")
+    @FindBy(xpath = "//div[contains(text(),'Message Successfully sent')]")
     public WebElement sentMessage;
 
 
