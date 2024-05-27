@@ -85,10 +85,13 @@ public class HamburgerMenuMessaging extends DialogContent {
 
     @And("Click on the Send button and user should see the success message")
     public void clickOnTheSendButtonAndUserShouldSeeTheSuccessMessage() {
-        wait.until(ExpectedConditions.elementToBeClickable(sendButton));
         myClick(sendButton);
         wait.until(ExpectedConditions.invisibilityOf(sendButton));
-//        Assert.assertFalse(sendButton.isDisplayed());
-//        verifyContainsText(sentMessage, "successfully");
+
+//        System.out.println("sentMessage = " + sentMessage);
+
+
+//        Assert.assertTrue(myJsGetText(sentMessage).toLowerCase().contains("successfully"));
+        verifyContainsText(sentMessage, "successfully");
     }
 }
