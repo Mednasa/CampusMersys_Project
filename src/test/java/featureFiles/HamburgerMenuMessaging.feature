@@ -10,10 +10,18 @@ Feature: Hamburger Menu Messaging Functionality
     Then From opened dropdown menu select messaging
     And Click on the New Message button
     Then User should be redirected to the new message page
+
     When User clicks on the Add Receiver button
     Then The add receiver window should open, and the user should select receivers.
     | receiverSearch | student |
-    | receiverSearch | teacher |
-    When User clicks on the Add & Close button
+    | receiverSearch | teach |
+    And User clicks on the Add & Close button and user should see the success message
+    Then Enter subject to the new message
+    And Enter message to the text and attach a file to it.
+    And Click on the Send button and user should see the success message
+
+
+
+
 
 
