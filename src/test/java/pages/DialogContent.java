@@ -59,6 +59,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "tbody[role=\"rowgroup\"] mat-checkbox")
     public List<WebElement> receiversCheckboxes;
 
+    @FindBy(css = "ms-table td img")
+    public List<WebElement> userImgs;
+
     @FindBy(xpath = "//span[text()=\"Add & Close\"]")
     public WebElement addCloseBtn;
 
@@ -67,6 +70,30 @@ public class DialogContent extends Parent {
 
     @FindBy(css = "input[placeholder=\"Name, Username or E-mail\"]")
     public WebElement receiverSearch;
+
+    @FindBy(xpath = "//div[contains(text(), \"successfully added\")]")
+    public WebElement successMsg;
+
+    @FindBy(css = "ms-text-field[placeholder$=SUBJECT] input")
+    public WebElement subjectBox;
+
+    @FindBy(css = "ms-button[caption$=SEND]")
+    public WebElement sendButton;
+
+    @FindBy(css = "iframe[title=\"Rich Text Area\"]")
+    public WebElement richTextAreaFrame;
+
+    @FindBy(css = "body[id=\"tinymce\"] p")
+    public WebElement richTextArea;
+
+    @FindBy(css = "file-upload ms-button")
+    public WebElement attachFileBtn;
+
+    @FindBy(css = "ms-standard-button[icon=\"hdd\"]")
+    public WebElement fromLocalButton;
+
+    @FindBy(css = "//div[contains(text(), 'sent')]")
+    public WebElement sentMessage;
 
 
     public WebElement getWebElement(String e) {
