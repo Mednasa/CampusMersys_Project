@@ -8,3 +8,6 @@ Feature: Searching assignments functionality
   Scenario: Searching Assignments To Campus System
     Given Login to the assignment submission
     When Listing of tasks when default search is performed
+    And Search and verify assignments by filtering
+    And Search and verify assignments using the date icon
+    And Search and validate assignments using course, type, date units from the sort menu

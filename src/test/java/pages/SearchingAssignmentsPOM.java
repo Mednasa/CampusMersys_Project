@@ -7,16 +7,16 @@ import utilities.GWD;
 
 import java.util.List;
 
-public class SearchingAssignmentsPOM extends Parent{
+public class SearchingAssignmentsPOM extends Parent {
 
     public SearchingAssignmentsPOM() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(css= "ms-search-button [class='mdc-button__label']")
+    @FindBy(css = "ms-search-button [class='mdc-button__label']")
     public WebElement searchBtn;
 
-    @FindBy (xpath = "(//mat-select)[1]")
+    @FindBy(xpath = "(//mat-select)[1]")
     public WebElement courseSelect;
 
     @FindBy(xpath = "(//mat-select)[2]")
@@ -40,7 +40,7 @@ public class SearchingAssignmentsPOM extends Parent{
     @FindBy(css = "mat-checkbox label")
     public WebElement onlyMarkedBtn;
 
-    @FindBy(css="[class='assignment ng-star-inserted']")
+    @FindBy(css = "[class='assignment ng-star-inserted']")
     public List<WebElement> assignList;
 
     @FindBy(css = " mat-datepicker-toggle svg+span")
@@ -64,7 +64,8 @@ public class SearchingAssignmentsPOM extends Parent{
     @FindBy(xpath = "(//strong[@class='ng-star-inserted'])[1]")
     public WebElement viewText;
 
-
+    @FindBy(css = "[class='loading-shade ng-star-inserted']")
+    public WebElement loadingBar;
 
 
 }
