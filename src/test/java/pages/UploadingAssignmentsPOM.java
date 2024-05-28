@@ -75,7 +75,7 @@ public class UploadingAssignmentsPOM extends Parent{
     public WebElement submittedBtn;
 
     @FindBy(xpath = "//*[text()='New Submission']")
-    public WebElement newSubmissonBtn;
+    public WebElement newSubmissionBtn;
 
     public WebElement getWebElement(String elements) {
         switch (elements) {
@@ -106,8 +106,8 @@ public class UploadingAssignmentsPOM extends Parent{
                 return this.confirmYesBtn;
             case "submittedBtn":
                 return this.submittedBtn;
-            case "newSubmissonBtn":
-                return this.newSubmissonBtn;
+            case "newSubmissionBtn":
+                return this.newSubmissionBtn;
 
         }
         return null;

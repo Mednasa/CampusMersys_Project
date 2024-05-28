@@ -105,4 +105,11 @@ public class UploadingAssignmentsSteps extends Parent {
         Assert.assertEquals(uap.succesMessages.getText(),"Successfully saved as a draft");
         System.out.println(uap.succesMessages.getText());
     }
+
+    @And("Opening and closing the saved image")
+    public void openingAndClosingTheSavedImage() {
+        myClick(uap.openImageBtn);
+        wait(2);
+        uap.myClick(uap.closeImageBtn);
+    }
 }

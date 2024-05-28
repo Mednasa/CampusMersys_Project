@@ -23,3 +23,9 @@ Feature: Uploading assignments functionality
       | imageBtn       |
       | saveAsDraftBtn |
     Then Successfully saved as a draft
+    And Opening and closing the saved image
+    And Click on the Element
+      | secondSubmitBtn  |
+      | confirmYesBtn    |
+      | submittedBtn     |
+      | newSubmissionBtn |
