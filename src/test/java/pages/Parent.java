@@ -171,6 +171,10 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void myLoadingBarwait(WebElement element){
+        wait.until(ExpectedConditions.attributeToBe(element,"style","height: 2px;"));
+    }
+
     public static int randomGenerator(int range) {
         return (int) (Math.random() * range);
     }
