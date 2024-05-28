@@ -171,7 +171,7 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void myLoadingBarwait(WebElement element){
+    public void myLoadingBarWait(WebElement element){
         wait.until(ExpectedConditions.attributeToBe(element,"style","height: 2px;"));
     }
 
