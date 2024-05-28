@@ -20,7 +20,6 @@ import java.util.List;
 public class Parent {
 
 
-
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
 
@@ -50,7 +49,7 @@ public class Parent {
     }
 
     public void verifyContainsText(WebElement element, String value) {
-        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+        wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
@@ -91,7 +90,7 @@ public class Parent {
             }
         }
 
-        StringSelection createPathFile=new StringSelection(pathFile);
+        StringSelection createPathFile = new StringSelection(pathFile);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(createPathFile, null);
 
         wait(1);
@@ -118,7 +117,7 @@ public class Parent {
             throw new RuntimeException(e);
         }
 
-        for (int i = 0; i <quantity ; i++) {
+        for (int i = 0; i < quantity; i++) {
             robot.delay(500);
             robot.keyPress(KeyEvent.VK_TAB);
             robot.keyRelease(KeyEvent.VK_TAB);
@@ -136,7 +135,7 @@ public class Parent {
             throw new RuntimeException(e);
         }
 
-        for (int i = 0; i <quantity ; i++) {
+        for (int i = 0; i < quantity; i++) {
             robot.delay(1000);
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
@@ -154,7 +153,7 @@ public class Parent {
             throw new RuntimeException(e);
         }
 
-        for (int i = 0; i <quantity ; i++) {
+        for (int i = 0; i < quantity; i++) {
             robot.delay(1000);
             robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -176,15 +175,15 @@ public class Parent {
         return (int) (Math.random() * range);
     }
 
-    public void iframeSwitchByIndex(int index){
+    public void iframeSwitchByIndex(int index) {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
     }
 
-    public void iframeSwitchByNameOrId(String nameOrId){
+    public void iframeSwitchByNameOrId(String nameOrId) {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(nameOrId));
     }
 
-    public void iframeSwitchByElement(WebElement iframeElement){
+    public void iframeSwitchByElement(WebElement iframeElement) {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframeElement));
     }
 
