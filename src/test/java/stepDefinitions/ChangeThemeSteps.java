@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.ChangeThemePOM;
 
 public class ChangeThemeSteps {
@@ -10,7 +11,7 @@ public class ChangeThemeSteps {
     public void clickOnTheProfileClickOnTheSettingsButtonFromTheSubmenuThatOpens() {
 
         ct.myClick(ct.profileBtn);
-        ct.myClick(ct.settingsBtn);
+        ct.myJsClick(ct.settingsBtn);
     }
 
     @And("Theme one")
@@ -23,6 +24,7 @@ public class ChangeThemeSteps {
     @Then("Receive verification message")
     public void receiveVerificationMessage() {
         ct.verifyContainsText(ct.verifyTheme, "Profile successfully updated");
+        ct.wait.until(ExpectedConditions.invisibilityOf(ct.verifyTheme));
     }
 
     @And("Theme two")
