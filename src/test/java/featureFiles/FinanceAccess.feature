@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Finance Access Functionality
 
   Background:
