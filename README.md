@@ -11,12 +11,14 @@ The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 
 - [Project Overview](#project-overview)
 - [Features Tested](#features-tested)
-- [Technologies Used](#technologies-used)
+- [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running Tests](#running-tests)
+- [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
+- [Contributors](#contributors)
+- [Team Members](#team-members)
 - [Contributing](#contributing)
+- [Pull Request Rules](#pull-request-rules)
 - [License](#license)
 
 ## Project Overview
@@ -146,6 +148,57 @@ Click to Runners > `TestRunnerSmoke` and Run
 
 Update any necessary configuration files (e.g., src/test/resources/config.properties) with your specific settings.
 ```
+## Project Structure
+```
+C:.
+├───.idea
+├───src
+│   ├───main
+│   │   ├───java
+│   │   └───resources
+│   └───test
+│       ├───java
+│       │   ├───apachePOI
+│       │   │   └───resource
+│       │   ├───featureFiles
+│       │   ├───pages
+│       │   ├───runners
+│       │   ├───stepDefinitions
+│       │   └───utilities
+│       └───resources
+└───target
+    ├───generated-test-sources
+    │   └───test-annotations
+    └───test-classes
+        ├───pages
+        ├───runners
+        ├───stepDefinitions
+        └───utilities
+```
+
+## Contributors
+| User Stories                                     | Contributor                  |
+|------------------------------------------------|------------------------------|
+| [02-14-16]| [Beyza Nur Er](https://github.com/beyzanurer) |
+| [06-15-20]| [Ahmet Kaya](https://github.com/0AhmetKaya0)|
+| [09-21-22-23] | [Onur Girgin](https://github.com/Mednasa) |
+| [08-13-24] | [Nigar Ayla Özcanan](https://github.com/NigarAylaOzcanan) |
+| [03-11-18]| [Numeyra Ülker](https://github.com/Numeyra) |
+| [01-05-12] | [Erdem Gürel](https://github.com/artam109) |
+| [04-10-17] | [Ömer Faruk Ayrıç](https://github.com/faruk-ayrcc25) |
+| [07-19-25] | [Şeyma Nur Aladağ](https://github.com/SeymaNur44) |
+
+## Team Members
+| Name                    | Role            | GitHub                                           | 
+|-------------------------|-----------------|--------------------------------------------------|
+| Beyza Nur Er            | QA Automation Engineer                  | [Beyza Nur Er](https://github.com/beyzanurer)   | 
+| Nigar Ayla Özcanan      | QA Automation Engineer                  | [Nigar Ayla Özcanan](https://github.com/NigarAylaOzcanan) | 
+| Ahmet Kaya              | QA Automation Engineer                  | [Ahmet Kaya](https://github.com/0AhmetKaya0) | 
+| Erdem Gürel             | QA Automation Engineer                  | [Erdem Gürel](https://github.com/artam109)       |    
+| Ömer Faruk Ayrıç        | QA Automation Engineer                  | [Ömer Faruk Ayrıç](https://github.com/faruk-ayrcc25) | 
+| Numeyra Ülker           | QA Automation Engineer                  | [Numeyra Ülker](https://github.com/Numeyra)  |
+| Şeyma Nur Aladağ        | QA Automation Engineer                  | [Şeyma Nur Aladağ](https://github.com/SeymaNur44)  |
+| Onur Girgin             | Project Lead & QA Automation Engineer   | [Onur Girgin](https://github.com/Mednasa) |
 
 ## Contributing
 Contributions are welcome! If you find any issues or want to add more tests, feel free to open a pull request.
