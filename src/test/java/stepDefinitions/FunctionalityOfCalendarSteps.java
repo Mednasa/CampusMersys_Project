@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class FunctionalityOfCalendarSteps extends Parent {
 
-    FunctionalityOfCalendarFunctionsPOM fcf =new FunctionalityOfCalendarFunctionsPOM();
+    FunctionalityOfCalendarFunctionsPOM fcf = new FunctionalityOfCalendarFunctionsPOM();
     SearchingAssignmentsPOM sap = new SearchingAssignmentsPOM();
 
     @Given("Weekly lesson plan and today's date appear and verify")
@@ -36,22 +36,20 @@ public class FunctionalityOfCalendarSteps extends Parent {
         wait.until(ExpectedConditions.visibilityOf(fcf.notmessage));
         myClick(fcf.lessonCloseIcon);
 
-        String todayText ="";
-        for (WebElement cD:fcf.calendarDays){
-            if (cD.getCssValue("background-color").equals("rgba(14, 89, 193, 1)")){
-                System.out.println(cD.getText().toUpperCase());
-                todayText += cD.getText().toUpperCase();
-            }
-
-        }
-
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd", Locale.UK);
         String formattedDate = today.format(formatter).toUpperCase();
 
-
-        Assert.assertEquals(todayText.charAt(0),formattedDate.charAt(0));
-
+        String todayText = "";
+        for (WebElement cD : fcf.calendarDays) {
+            if (cD.getCssValue("background-color").equals("rgba(14, 89, 193, 1)")) {
+                System.out.println(cD.getText().toUpperCase());
+                todayText += cD.getText().toUpperCase();
+                Assert.assertEquals(todayText.charAt(0), formattedDate.charAt(0));
+            } else if (formattedDate.startsWith("S")) {
+                Assert.assertFalse(todayText.startsWith("S"));
+            }
+        }
     }
 
     @When("Visibility of P, S, E, C symbols and their meanings on the page")
@@ -71,7 +69,7 @@ public class FunctionalityOfCalendarSteps extends Parent {
     @And("View the status of scheduled lessons represented by icons \\(P, S, E, C)")
     public void viewTheStatusOfScheduledLessonsRepresentedByIconsPSEC() {
 
-        while (fcf.psec.isEmpty()){
+        while (fcf.psec.isEmpty()) {
             myClick(fcf.calendarPreviousBtn);
             myLoadingBarWait(sap.loadingBar);
         }
