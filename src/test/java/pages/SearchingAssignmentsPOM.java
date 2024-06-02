@@ -67,5 +67,8 @@ public class SearchingAssignmentsPOM extends Parent {
     @FindBy(css = "[class='loading-shade ng-star-inserted']")
     public WebElement loadingBar;
 
+    @FindBy(css = "ms-assignment-panel-student span>strong")
+    public List<WebElement> lessonName;
+
 
 }

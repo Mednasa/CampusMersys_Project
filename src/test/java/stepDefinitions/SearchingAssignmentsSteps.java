@@ -29,10 +29,12 @@ public class SearchingAssignmentsSteps extends Parent {
 
         myClick(sap.searchBtn);
         myLoadingBarWait(sap.loadingBar);
-        if (!sap.viewText.isDisplayed()) {
+        if (sap.lessonName.isEmpty()) {
+
             System.out.println("List is empty");
 
         } else {
+
             System.out.println("List is not empty");
         }
 
@@ -47,7 +49,7 @@ public class SearchingAssignmentsSteps extends Parent {
 
             myJsClick(sap.listName.get(i));
             myLoadingBarWait(sap.loadingBar);
-            if (sap.upcomingText.isEmpty()) {
+            if (sap.lessonName.isEmpty()) {
 
                 System.out.println("List is empty");
 
@@ -111,10 +113,12 @@ public class SearchingAssignmentsSteps extends Parent {
         for (int i = 0; i < sap.viewList.size() - 1; i++) {
             myJsClick(sap.viewList.get(i));
             myLoadingBarWait(sap.loadingBar);
-            if (!sap.viewText.isDisplayed()) {
+            if (sap.lessonName.isEmpty()) {
+
                 System.out.println("List is empty");
 
             } else {
+
                 System.out.println("List is not empty");
             }
             myJsClick(sap.viewSelectBtn);
