@@ -19,8 +19,8 @@ public class HomePageSteps extends Parent {
 
     HomePagePOM hp= new HomePagePOM();
 
-    @Given("See the company logo")
-    public void seeTheCompanyLogo() {
+    @Given("Locate the company logo in the top left corner of the homepage.")
+    public void locateTheCompanyLogoInTheTopLeftCornerOfTheHomepage() {
         Assert.assertTrue(hp.homepageLogo.isDisplayed());
 
     }
@@ -30,8 +30,8 @@ public class HomePageSteps extends Parent {
 
     }
 
-    @When("Navigate to Homepage")
-    public void navigateToHomepage() {
+    @When("Verify that the user will be redirected to the homepage.")
+    public void verifyThatTheUserWillBeRedirectedToTheHomepage() {
         String originalWindow = GWD.getDriver().getWindowHandle();
 
         Set<String> allWindows = GWD.getDriver().getWindowHandles();
