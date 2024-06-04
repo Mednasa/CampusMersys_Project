@@ -6,7 +6,7 @@ Feature: Navigate to HomePage
     Then User should be logged in successfully
 
   Scenario: User directed to homepage
-    Given See the company logo
+    Given Locate the company logo in the top left corner of the homepage.
     When Click on the Company Logo
-    Then Navigate to Homepage
+    Then Verify that the user will be redirected to the homepage.
 

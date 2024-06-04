@@ -18,8 +18,8 @@ public class GradingSteps extends Parent {
         myClick(gp.GradingButton);
     }
 
-    @When("Navigate to Grading Page")
-    public void navigateToGradingPage() {
+    @When("Verify to Navigate to the grading page")
+    public void verifyToNavigateToGradingPage() {
         wait.until(ExpectedConditions.urlToBe("https://test.mersys.io/student-grading"));
         Assert.assertEquals(GWD.getDriver().getCurrentUrl(), "https://test.mersys.io/student-grading", "Redirection to the Grading page failed");
     }
@@ -30,8 +30,8 @@ public class GradingSteps extends Parent {
         myJsClick(gp.StudentTranscript);
     }
 
-    @When("Navigate to Student Transcript Section")
-    public void navigateToStudentTranscriptSection() {
+    @When("Verify to Navigate to Student Transcript Section")
+    public void verifyToNavigateToStudentTranscriptSection() {
         wait.until(ExpectedConditions.elementToBeClickable(gp.StudentTranscriptSection));
         Assert.assertTrue(gp.StudentTranscriptSection.isDisplayed());
 
@@ -43,8 +43,8 @@ public class GradingSteps extends Parent {
         myJsClick(gp.CourseGrade);
     }
 
-    @When("Navigate to Course Grade Section")
-    public void navigateToCourseGradeSection() {
+    @When("Verify to Navigate to Course Grade Section")
+    public void verifyToNavigateToCourseGradeSection() {
         wait.until(ExpectedConditions.elementToBeClickable(gp.CourseGradeSection));
         Assert.assertTrue(gp.CourseGradeSection.isDisplayed());
     }
@@ -55,8 +55,8 @@ public class GradingSteps extends Parent {
         myJsClick(gp.TranscriptSubject);
     }
 
-    @When("Navigate to Transcript by Subject Section")
-    public void navigateToTranscriptBySubjectSection() {
+    @When("Verify to Navigate to Transcript by Subject Section")
+    public void verifyToNavigateToTranscriptBySubjectSection() {
         wait.until(ExpectedConditions.elementToBeClickable(gp.TranscriptSubjectSection));
         Assert.assertTrue(gp.TranscriptSubjectSection.isDisplayed());
     }
