@@ -69,6 +69,7 @@ public class AssignmentsIconSteps extends Parent {
         String submitVerifyText=ai.submitVerify.getText();
         Assert.assertTrue(submitVerifyText.contains("Submit"));
         myJsClick(ai.exit);
+        myLoadingBarWait(sa.loadingBar);
 
     }
 
