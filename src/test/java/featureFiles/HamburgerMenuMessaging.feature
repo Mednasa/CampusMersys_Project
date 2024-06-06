@@ -19,8 +19,10 @@ Feature: Hamburger Menu Messaging Functionality
     Then Enter subject to the new message
     And Enter message to the text and attach a file to it.
     And Click on the Send button and user should see the success message
-
-
+    When User clicks on the hamburger menu button
+    Then From opened dropdown menu select messaging
+    Then User clicks on the outbox in messages
+    And User should be able to see sent messages
 
 
 
