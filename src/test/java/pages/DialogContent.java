@@ -95,6 +95,24 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'Message Successfully sent')]")
     public WebElement sentMessage;
 
+    @FindBy(css = "div[class=\"mat-mdc-menu-content ng-tns-c1923052698-9\"] button:nth-child(3)")
+    public WebElement hmbOutbox;
+
+    @FindBy(css = "ms-browse-table tbody tr")
+    public List<WebElement> outboxMsgList;
+
+    @FindBy(css = "ms-browse-table  div > div button:nth-child(1)")
+    public WebElement financeMoreOptionsBtn;
+
+    @FindBy(css = "div[tabindex=\"-1\"] button:nth-child(1)")
+    public WebElement feeExcelExport;
+
+    @FindBy(css = "div[tabindex=\"-1\"] button:nth-child(2)")
+    public WebElement feePdfExport;
+
+    @FindBy(xpath = "//div[contains(text(),'Please wait')] ")
+    public WebElement feeDownloadWaitMessage;
+
 
     public WebElement getWebElement(String e) {
         switch (e) {
@@ -112,6 +130,12 @@ public class DialogContent extends Parent {
                 return this.hamburgerMenu;
             case "receiverSearch":
                 return this.receiverSearch;
+            case "financeMoreOptionsBtn":
+                return this.financeMoreOptionsBtn;
+            case "feeExcelExport":
+                return this.feeExcelExport;
+            case "feePdfExport":
+                return this.feePdfExport;
         }
         return null;
     }

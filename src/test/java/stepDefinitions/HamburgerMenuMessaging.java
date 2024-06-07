@@ -24,7 +24,7 @@ public class HamburgerMenuMessaging extends DialogContent {
 
     @When("From opened dropdown menu select messaging")
     public void fromOpenedDropdownMenuSelectMessaging() {
-        myClick(HmbMessaging);
+        hoverOver(HmbMessaging);
     }
 
     @And("Click on the New Message button")
@@ -87,11 +87,18 @@ public class HamburgerMenuMessaging extends DialogContent {
     public void clickOnTheSendButtonAndUserShouldSeeTheSuccessMessage() {
         myClick(sendButton);
         wait.until(ExpectedConditions.invisibilityOf(sendButton));
-
-//        System.out.println("sentMessage = " + sentMessage);
-
-
-//        Assert.assertTrue(myJsGetText(sentMessage).toLowerCase().contains("successfully"));
         verifyContainsText(sentMessage, "successfully");
     }
+
+    @Then("User clicks on the outbox in messages")
+    public void userClicksOnTheOutboxInMessages() {
+        myClick(hmbOutbox);
+    }
+
+    @And("User should be able to see sent messages")
+    public void userShouldBeAbleToSeeSentMessages() {
+        wait.until(ExpectedConditions.visibilityOfAllElements(outboxMsgList));
+        Assert.assertFalse(outboxMsgList.isEmpty());
+    }
+
 }
