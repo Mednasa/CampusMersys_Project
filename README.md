@@ -194,9 +194,6 @@ C:.
 | Nigar Ayla Özcanan      | QA Automation Engineer                  | [Nigar Ayla Özcanan](https://github.com/NigarAylaOzcanan) | 
 | Ahmet Kaya              | QA Automation Engineer                  | [Ahmet Kaya](https://github.com/0AhmetKaya0) | 
 | Erdem Gürel             | QA Automation Engineer                  | [Erdem Gürel](https://github.com/artam109)       |    
-| Ömer Faruk Ayrıç        | QA Automation Engineer                  | [Ömer Faruk Ayrıç](https://github.com/faruk-ayrcc25) | 
-| Numeyra Ülker           | QA Automation Engineer                  | [Numeyra Ülker](https://github.com/Numeyra)  |
-| Şeyma Nur Aladağ        | QA Automation Engineer                  | [Şeyma Nur Aladağ](https://github.com/SeymaNur44)  |
 | Onur Girgin             | Project Lead & QA Automation Engineer   | [Onur Girgin](https://github.com/Mednasa) |
 
 ## Contributing
