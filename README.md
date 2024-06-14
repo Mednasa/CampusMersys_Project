@@ -183,10 +183,9 @@ C:.
 | [06-15-20]| [Ahmet Kaya](https://github.com/0AhmetKaya0)|
 | [09-21-22-23] | [Onur Girgin](https://github.com/Mednasa) |
 | [08-13-24] | [Nigar Ayla Özcanan](https://github.com/NigarAylaOzcanan) |
-| [03-11-18]| [Numeyra Ülker](https://github.com/Numeyra) |
 | [01-05-12] | [Erdem Gürel](https://github.com/artam109) |
-| [04-10-17] | [Ömer Faruk Ayrıç](https://github.com/faruk-ayrcc25) |
-| [07-19-25] | [Şeyma Nur Aladağ](https://github.com/SeymaNur44) |
+
+
 
 ## Team Members
 | Name                    | Role            | GitHub                                           | 
